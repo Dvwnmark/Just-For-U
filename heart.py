@@ -17,7 +17,7 @@ def heart_function(t, shrink_ratio: float = IMAGE_ENLARGE):
     x *= shrink_ratio
     y *= shrink_ratio
 
- 
+
     x += CANVAS_CENTER_X
     y += CANVAS_CENTER_Y
 
@@ -44,12 +44,12 @@ def shrink(x, y, ratio):
 
 
 def curve(p):
-  
+
     return 2 * (2 * sin(4 * p)) / (2 * pi)
 
 
 class Heart:
-  
+
 
     def __init__(self, generate_frame=20):
         self._points = set()  
@@ -71,7 +71,7 @@ class Heart:
             x, y = heart_function(t)
             self._points.add((x, y)) 
 
-       
+
         for _x, _y in list(self._points):
             for _ in range(3):
                 x, y = scatter_inside(_x, _y, 0.05)
