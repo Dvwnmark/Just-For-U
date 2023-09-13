@@ -9,6 +9,7 @@ CANVAS_CENTER_Y = CANVAS_HEIGHT / 2
 IMAGE_ENLARGE = 11  
 HEART_COLOR = "#f76070"  #chỉnh màu ở đây
 
+
 def heart_function(t, shrink_ratio: float = IMAGE_ENLARGE):
 
     x = 16 * (sin(t) ** 3)
@@ -36,7 +37,7 @@ def scatter_inside(x, y, beta=0.15):
 
 
 def shrink(x, y, ratio):
- 
+
     force = -1 / (((x - CANVAS_CENTER_X) ** 2 + (y - CANVAS_CENTER_Y) ** 2) ** 0.6)  
     dx = ratio * force * (x - CANVAS_CENTER_X)
     dy = ratio * force * (y - CANVAS_CENTER_Y)
@@ -103,21 +104,20 @@ class Heart:
 
         all_points = []
 
-      
         heart_halo_point = set()  
         for _ in range(halo_number):
             t = random.uniform(0, 2 * pi)  
             x, y = heart_function(t, shrink_ratio=11.6)  
             x, y = shrink(x, y, halo_radius)
             if (x, y) not in heart_halo_point:
-           
+
                 heart_halo_point.add((x, y))
                 x += random.randint(-14, 14)
                 y += random.randint(-14, 14)
                 size = random.choice((1, 2, 2))
                 all_points.append((x, y, size))
 
-  
+
         for x, y in self._points:
             x, y = self.calc_position(x, y, ratio)
             size = random.randint(1, 3)
