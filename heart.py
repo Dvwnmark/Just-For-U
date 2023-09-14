@@ -1,6 +1,7 @@
 import random
 from math import sin, cos, pi, log
 from tkinter import *
+from playsound import playsound
 
 CANVAS_WIDTH = 640  
 CANVAS_HEIGHT = 480  
@@ -154,3 +155,4 @@ if __name__ == '__main__':
     heart = Heart()  
     draw(root, canvas, heart)  
     root.mainloop()
+    playsound('D:\\Uknow\\Just-For-U\\Đâu đâu cũng là em – YoungCaptain.mp3')
