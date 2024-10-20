@@ -155,4 +155,4 @@ if __name__ == '__main__':
     heart = Heart()  
     draw(root, canvas, heart)  
     root.mainloop()
-    playsound('D:\\Uknow\\Just-For-U\\Đâu đâu cũng là em – YoungCaptain.mp3')
+    playsound('D:\\Just-For-U\\Đâu đâu cũng là em – YoungCaptain.mp3')
